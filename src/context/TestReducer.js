@@ -6,14 +6,16 @@ const TestReducer = (state, action) => {
         planetData: action.payload,
         flagDataAlreadyRetrieved: action.flag
       }
-
-    // case 'GET_USER':
-    //   return {
-    //     ...state,
-    //     userInfo: { ...state.userInfo, ...{ avatarUrl: action.payload.avatar_url, name: action.payload.name,
-    //                                         location: action.payload.location, userLoaded: true } }
-    //   }
-
+    case 'GET_FILM_TITLES':
+      return {
+        ...state,
+        filmTitles: action.payload
+      }
+    case 'GET_RESIDENT_NAMES':
+      return {
+        ...state,
+        residentTitles: action.payload
+      }
     default:
       return state
   }

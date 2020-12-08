@@ -13,63 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
-/* OLD HTML TABLE STYLES */
-
-.gridTable {
-  /* border: 1px solid #000; */
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.gridTable thead tr th {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-bottom: 1px solid #333;
-  padding: 5px 10px;
-  color: #aaa;
-}
-
-.gridTable tbody tr td {
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  border-bottom: 1px solid #333;
-}
-
-.gridTable tbody tr:hover td {
-  background: #f1f1f1;
-}
-
-.gridActions button {
-  margin: 0 5px;
-}
-
-/* NAVBAR */
-
-.v-header {
-  background-color: rgb(228, 223, 213);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  /* transition-duration: 1.0s ease; */
-  transition: 1.0s ease;
-  font-family: 'Thasadith', sans-serif;
-}
-
-.v-header:hover {
-  @include from(m) {
-    background-color: rgb(68, 68, 68);
-    color: rgb(228, 223, 213);
-  }
-}
-
 .default-margin {
   @include to(m) {
     margin-top: 15px;
@@ -80,170 +23,61 @@ body {
   }
 }
 
-/* JUMBO PHOTOS HOME SCREEN - LANDING PAGE */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* LAYOUT COMPONENTS */
 
 .t-button {
-	background-color: rgb(228, 223, 213);
-  border: 0px;
-  color: rgb(68, 68, 68);
-  font-family: 'Manrope', sans-serif;
+	background-color: rgb(210, 210, 210);
+  border: 1px solid rgb(210, 210, 210);
+  color: rgb(64, 64, 64);
   margin: auto;
   border-radius: 3px;
   text-align: center;
   text-decoration: none;
-  transition-duration: 1.0s;
+  transition-duration: 0.5s;
   cursor: pointer;
 }
 
 .t-button:hover {
-  background-color: rgb(68, 68, 68);
-  color: rgb(228, 223, 213);
+  background-color: rgb(126, 119, 111);
+  color: rgb(210, 210, 210);
+  border: 1px solid rgb(210, 210, 210);
 }
 
-.container-floating-text {
-  position: relative;
-  text-align: center;
-  top: 2em;
-  /* left: 0px; */
-  /* margin-bottom: 1.5em; */
-  /* border: 2px dotted magenta; */
+.planet-info p {
+  transition-duration: 0.25s;
 }
 
-.floating-text {
-  position: absolute;
-  color: #f1f1f1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.1);         /* Black background with 0.1 opacity */
-  /* border: 2px dotted limegreen; */
+.planet-info p:hover {
+  background-color: rgb(210, 210, 210);
+  color: rgb(64, 64, 64);
 }
 
-.floating-text > div > h1 {
-  @include to(m) {
-    font-size: 35px;
-  }
+/* MODAL: */
 
-  @include from(m) {
-    font-size: 75px;
-  }
-}
-
-.floating-text > div > p {
-  @include to(m) {
-    font-size: 12px;
-  }
-
-  @include from(m) {
-    font-size: 20px;
-  }
-}
-
-/* DROPDOWN NAVBAR MENU */
-
-.dropdown-left {
-  float: left;
-  overflow: hidden;
-  /* border: 1px dotted limegreen; */
-}
-
-.dropdown-left span {
-  cursor: pointer;
-}
-
-.dropdown-left:hover .dropdown-content {
-  display: block;
-  /* margin-top: 10px; */
-}
-
-.dropdown-right {
-  float: right;
-  overflow: hidden;
-  /* border: 1px dotted limegreen; */
-}
-
-.dropdown-right span {
-  cursor: pointer;
-}
-
-.dropdown-right:hover .dropdown-content {
-  display: block;
-  /* margin-top: 10px; */
-}
-
-.dropdown-content {
+.modal {
   display: none;
-  position: absolute;
-  /* left: 0%; */
-  opacity: 0.8;
-  background-color: rgb(68, 68, 68);
-  width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position: fixed;
   z-index: 1;
-}
-
-.mobile-dropdown-content {
-  display: block;
-  position: absolute;
-  /* left: 0%; */
-  opacity: 0.8;
-  background-color: rgb(68, 68, 68);
-  width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.mobile-dropdown-content span {
-  float: none;
-  color: rgb(228, 223, 213);
-  padding: 5px 15px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  cursor: pointer;
-}
-
-.dropdown-content span {
-  float: none;
-  color: rgb(228, 223, 213);
-  padding: 5px 15px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  cursor: pointer;
-}
-
-.dropdown-content span:hover {
-  background-color: rgb(228, 223, 213);
-  color: rgb(68, 68, 68);
-  transition-duration: 0.5s;
-}
-
-/* SECONDARY IMAGES TRANSITION ON MOUSEOVER */
-
-.overlay {
-  /* position: absolute; 
-  top: 0;
-  bottom: 0;
+  padding-top: 100px;
   left: 0;
-  right: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
-  width: 100%; */
-  opacity: 0;
-  transition: .5s ease;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
-.img-container:hover .overlay {
-  opacity: 1;
-}
-
-/* USER DATA INPUT: */
-
-.input-style {
-  border: 2px solid rgb(68, 68, 68);
-  background-color: rgb(228, 223, 213);
-  color: rgb(68, 68, 68);
-  font-family: 'Thasadith', sans-serif;
+.modal-content {
+  background-color: rgb(210, 210, 210);
+  color: rgb(64, 64, 64);
+  margin: auto;
+  border: 1px solid rgb(64, 64, 64);
+  width: 80%;
 }
 
 /* CONTAINER VISIBILITY: */

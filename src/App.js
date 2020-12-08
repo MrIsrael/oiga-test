@@ -7,6 +7,9 @@ import { TestProvider } from './context/TestState'
 
 // Page components
 import Planets from './components/pages/Planets'
+import SinglePlanet from './components/pages/SinglePlanet'
+import ListFilms from './components/pages/ListFilms'
+import ListResidents from './components/pages/ListResidents'
 
 // Styles
 import './App.scss'
@@ -18,8 +21,9 @@ const App = () => {
 
         <div>
           <Switch>
-            {/* <Route path='/order-confirmation/*' render={() => ( <DummyPurchaseSuccess /> )} /> */}
-            {/* <Route path='/purchaseid/:paymentref' render={() => ( <DummyReviewOrder /> )} /> */}
+            <Route path='/films/:name' render={(props) => ( <ListFilms {...props} /> )} />
+            <Route path='/residents/:name' render={(props) => ( <ListResidents {...props} /> )} />
+            <Route path='/details/:name' render={(props) => ( <SinglePlanet {...props} /> )} />
             <Route exact path='/' render={() => ( <Planets /> )} />
           </Switch>
         </div>
