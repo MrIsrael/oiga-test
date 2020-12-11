@@ -20,7 +20,8 @@ export const TestProvider = ({ children }) => {
   // Action / get planet data from Star Wars API
   const getPlanetData = async () => {
     console.log('Getting planet data...')
-    const res = await axios.get('https://swapi.dev/api/planets')
+    // Using "https://cors-anywhere.herokuapp.com/" header on GET request to avoid CORS error when running app from Netlify
+    const res = await axios.get('https://cors-anywhere.herokuapp.com/https://swapi.dev/api/planets')
     // console.log(res.data.results)
     const arr = res.data.results.map(obj => Object.entries(obj))
     console.log(arr)
