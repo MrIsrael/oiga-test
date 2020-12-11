@@ -20,7 +20,7 @@ export const TestProvider = ({ children }) => {
   // Action / get planet data from Star Wars API
   const getPlanetData = async () => {
     console.log('Getting planet data...')
-    const res = await axios.get('http://swapi.dev/api/planets')
+    const res = await axios.get('https://swapi.dev/api/planets')
     // console.log(res.data.results)
     const arr = res.data.results.map(obj => Object.entries(obj))
     console.log(arr)
